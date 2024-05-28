@@ -18,8 +18,11 @@ podSecurityContext: {}
 securityContext: {}
 
 service:
-  type: ClusterIP
-  port: 80
+  type: LoadBalancer
+  ports:
+  - nodePort: 32751
+    port: 8080
+    targetPort: 8080
 
 ingress:
   enabled: false
