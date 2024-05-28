@@ -7,8 +7,8 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.ports[0].port }}
-      targetPort: {{ .Values.service.ports[0].targetPort }}
-      nodePort: {{ .Values.service.ports[0].nodePort }}
+    - port: {{ index .Values.service.ports 0 "port" }}
+      targetPort: {{ index .Values.service.ports 0 "targetPort" }}
+      nodePort: {{ index .Values.service.ports 0 "nodePort" }}
   selector:
     app: {{ include "dugeun.name" . }}
