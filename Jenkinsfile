@@ -7,6 +7,7 @@ pipeline {
                         sh 'cp -R helm/* .'
 		        sh 'ls -ltr'
                         sh 'pwd'
+		     	sh '/usr/local/bin/helm lint dugeun' // Helm 차트 문법 검사 추가
                         sh '/usr/local/bin/helm upgrade --install dugeun-app dugeun --set image.repository=seol11796/dugeun'
               			
             }           
