@@ -1,4 +1,4 @@
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "dugeun.fullname" . }}-mem-hpa
@@ -18,3 +18,5 @@ spec:
         target:
           type: Utilization
           averageUtilization: 80
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80  # v2beta2의 metrics 대신 사용
