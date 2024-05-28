@@ -3,7 +3,6 @@ replicaCount: 1
 image:
   repository: seol11796/dugeun
   pullPolicy: IfNotPresent
-appVersion: latest
 
 
 imagePullSecrets: []
