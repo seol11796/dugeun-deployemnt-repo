@@ -20,9 +20,9 @@ securityContext: {}
 service:
   type: LoadBalancer
   ports:
-  - nodePort: 32751
-    port: 8080
-    targetPort: 8080
+  - nodePort: 32752
+    port: 80
+    targetPort: 80
 
 ingress:
   enabled: false
